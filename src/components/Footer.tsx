@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Logo */}
           <div className="md:col-span-1">
             <span className="font-display text-xl font-semibold text-foreground tracking-tight">
-              SJ<span className="text-accent">Operations</span>
+              SJ<span className="text-accent">Ops</span>
             </span>
             <p className="text-muted-foreground mt-4 text-sm leading-relaxed">
               Behind-the-scenes operators for creators and founders. We build the back end so you can focus on the front end.

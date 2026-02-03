@@ -26,7 +26,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <span className="font-display text-xl font-semibold text-foreground tracking-tight">
-              SJ<span className="text-accent">Operations</span>
+              SJ<span className="text-accent">Ops</span>
             </span>
           </Link>
 
