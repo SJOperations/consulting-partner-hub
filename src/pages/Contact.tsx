@@ -294,6 +294,16 @@ const Contact = () => {
                     </li>
                   </ul>
                 </div>
+
+                <div className="mt-6 pt-6 border-t border-border">
+                  <h4 className="font-semibold text-foreground mb-2">Prefer email?</h4>
+                  <a 
+                    href="mailto:contact@sjoperations.com" 
+                    className="text-accent hover:underline text-sm"
+                  >
+                    contact@sjoperations.com
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>

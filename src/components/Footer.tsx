@@ -14,6 +14,12 @@ const Footer = () => {
             <p className="text-muted-foreground mt-4 text-sm leading-relaxed">
               Behind-the-scenes operators for creators and founders. We build the back end so you can focus on the front end.
             </p>
+            <a 
+              href="mailto:contact@sjoperations.com" 
+              className="text-accent hover:underline text-sm mt-4 inline-block"
+            >
+              contact@sjoperations.com
+            </a>
           </div>
 
           {/* Services */}
