@@ -61,18 +61,18 @@ const Hero = () => {
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
-              <Link to="/case-studies">See Case Studies</Link>
+              <Link to="/services">See What We Build</Link>
             </Button>
           </motion.div>
 
-          {/* Trust indicators */}
+          {/* Industries we serve */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
             className="mt-16 pt-10 border-t border-border"
           >
-            <p className="text-sm text-muted-foreground mb-6">Trusted by creators and founders across</p>
+            <p className="text-sm text-muted-foreground mb-6">We work with creators and founders in</p>
             <div className="flex flex-wrap gap-8 text-muted-foreground/60">
               <span className="text-sm font-medium">Coaching</span>
               <span className="text-sm font-medium">Consulting</span>

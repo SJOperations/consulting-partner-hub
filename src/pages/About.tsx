@@ -8,7 +8,7 @@ import { ArrowRight, Shield, Zap, Target, BarChart3, Eye } from 'lucide-react';
 const operatorCode = [
   { icon: Shield, title: 'Confidentiality', description: 'Your business stays your business. NDA on request.' },
   { icon: Eye, title: 'Clarity', description: 'No jargon, no fluff. You\'ll always know what we\'re doing and why.' },
-  { icon: Zap, title: 'Speed', description: 'We move fast. First wins within 72 hours of kickoff.' },
+  { icon: Zap, title: 'Speed', description: 'We move fast and prioritise momentum over perfection.' },
   { icon: Target, title: 'Precision', description: 'Every action ties back to a measurable outcome.' },
   { icon: BarChart3, title: 'Reporting', description: 'Weekly numbers, monthly strategy. Full transparency.' },
 ];
@@ -129,7 +129,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Proof of Competence */}
+      {/* What We Build */}
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-6">
           <motion.div
@@ -139,32 +139,34 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <p className="section-label">Proof of Competence</p>
+            <p className="section-label">What We Build</p>
             <h2 className="font-display text-3xl font-semibold text-foreground mb-4">
-              What we've shipped
+              The systems behind your growth
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We're operators, not theorists. Here's what we've built across engagements:
+              We're operators, not theorists. Here's the infrastructure we install for every client:
             </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { value: '50+', label: 'Funnels shipped' },
-              { value: '200+', label: 'Automations deployed' },
-              { value: '100+', label: 'SOPs documented' },
-              { value: '30+', label: 'Dashboards built' },
-            ].map((stat, index) => (
+              { title: 'Funnels & Pages', desc: 'Landing pages, checkout flows, lead magnets' },
+              { title: 'Automations', desc: 'Email sequences, CRM workflows, lead routing' },
+              { title: 'SOPs & Docs', desc: 'Documented processes your team can follow' },
+              { title: 'Dashboards', desc: 'Real-time KPIs and performance tracking' },
+            ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card p-6 rounded-lg border border-border text-center"
+                className="bg-card p-6 rounded-lg border border-border"
               >
-                <div className="stat-value">{stat.value}</div>
-                <div className="stat-label">{stat.label}</div>
+                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground text-sm">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -183,17 +185,16 @@ const About = () => {
           >
             <p className="section-label">The Team</p>
             <h2 className="font-display text-3xl font-semibold text-foreground mb-6">
-              Quiet operators. Loud results.
+              Small team. Big ownership.
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              We're a small, focused team of operators with backgrounds in 
-              marketing, automation, and business operations. We've worked 
-              in-house at startups, led marketing at agencies, and built 
-              systems for some of the fastest-growing personal brands.
+              We're a focused operations team with experience in marketing, 
+              automation, and business systems. We've worked with startups, 
+              agencies, and growing personal brands.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              We stay small intentionally. Every client gets senior-level 
-              attention, not juniors learning on your dime.
+              We stay small intentionally. Every client gets direct access 
+              to the people doing the work—no account managers, no handoffs.
             </p>
           </motion.div>
         </div>
