@@ -16,6 +16,9 @@ import { Calendar, Clock, CheckCircle2 } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
+// TODO: Replace with your Formspree form ID from https://formspree.io
+const FORMSPREE_FORM_ID = "YOUR_FORM_ID";
+
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,16 +27,36 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
     
-    toast({
-      title: "Application received!",
-      description: "We'll be in touch within 24 hours to schedule your fit call.",
-    });
-    
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Application received!",
+          description: "We'll be in touch within 24 hours to schedule your fit call.",
+        });
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
