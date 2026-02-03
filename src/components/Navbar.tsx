@@ -1,138 +1,91 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 const navLinks = [
-  { name: 'Marketing', href: '#marketing', hasDropdown: true },
-  { name: 'For Agencies', href: '#agencies', hasDropdown: true },
-  { name: 'About', href: '#about' },
-  { name: 'Speaking', href: '#speaking' },
-  { name: 'Knowledge Hub', href: '#knowledge', hasDropdown: true },
+  { name: 'Services', href: '/services' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'About', href: '/about' },
+  { name: 'FAQs', href: '/faqs' },
 ];
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      {/* Contact bar */}
-      <div className="fixed top-0 right-0 z-50">
-        <a 
-          href="#contact" 
-          className="bg-foreground text-background px-6 py-3 text-sm font-medium hover:bg-foreground/90 transition-colors inline-block"
-        >
-          Contact
-        </a>
-      </div>
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border"
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <span className="font-display text-xl font-semibold text-foreground tracking-tight">
+              SJ<span className="text-accent">Operations</span>
+            </span>
+          </Link>
 
-      <motion.nav
-        initial={{ y: -20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-background/95 backdrop-blur-md border-b border-border' 
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <a href="#" className="flex items-center">
-              <span className={`font-display text-3xl font-medium transition-colors ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground'
-              }`}>
-                tom<br />wardman
-              </span>
-            </a>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors flex items-center gap-1 ${
-                    isScrolled 
-                      ? 'text-foreground hover:text-primary' 
-                      : 'text-primary-foreground/90 hover:text-primary-foreground'
-                  }`}
-                >
-                  {link.name}
-                  {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                </a>
-              ))}
-            </div>
-
-            {/* CTA Button */}
-            <div className="hidden lg:block">
-              <Button 
-                variant={isScrolled ? "default" : "outlineWhite"} 
-                size="sm"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
-                Get Instant Price
-              </Button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`} />
-              ) : (
-                <Menu className={`h-6 w-6 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`} />
-              )}
-            </button>
+                {link.name}
+              </Link>
+            ))}
           </div>
 
-          {/* Mobile Menu */}
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="lg:hidden py-4 border-t border-border bg-background"
-            >
-              <div className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-sm font-medium text-foreground hover:text-primary transition-colors flex items-center gap-1"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                    {link.hasDropdown && <ChevronDown className="w-4 h-4" />}
-                  </a>
-                ))}
-                <Button variant="default" size="sm" className="w-full mt-2">
-                  Get Instant Price
-                </Button>
-              </div>
-            </motion.div>
-          )}
+          {/* CTA */}
+          <div className="hidden md:flex items-center gap-4">
+            <Button asChild size="sm">
+              <Link to="/contact">Book a Call</Link>
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 text-foreground"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
 
-        {/* Bottom border line on hero */}
-        {!isScrolled && (
-          <div className="container mx-auto px-6">
-            <div className="h-px bg-primary-foreground/20" />
-          </div>
+        {/* Mobile Menu */}
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden py-4 border-t border-border"
+          >
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Button asChild className="mt-2">
+                <Link to="/contact" onClick={() => setIsOpen(false)}>Book a Call</Link>
+              </Button>
+            </div>
+          </motion.div>
         )}
-      </motion.nav>
-    </>
+      </div>
+    </motion.nav>
   );
 };
 
