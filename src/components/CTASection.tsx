@@ -1,49 +1,45 @@
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 import { Button } from './ui/button';
 
 const CTASection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="apply" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] pointer-events-none" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div ref={ref} className="max-w-3xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7 }}
-            className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6"
-          >
-            Ready to Build Something{' '}
-            <span className="italic">Disgustingly Profitable?</span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-lg text-muted-foreground mb-10"
-          >
-            We don't work with everyone. But if you're the right fit, this will be the most 
-            valuable relationship you've ever had in business.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            <Button variant="gold" size="lg" className="text-base">
-              Apply to Work With Us
+    <section className="py-24 bg-foreground text-background">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-background/60 mb-4">
+            Not an Agency
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium leading-tight mb-6">
+            Agencies trap you in dependency. I build your independence.
+          </h2>
+          <p className="text-lg text-background/80 leading-relaxed mb-6">
+            Traditional agencies profit from your dependence, so the longer you need them, 
+            the more they earn. Most will promise results while keeping the keys to your 
+            marketing locked away.
+          </p>
+          <p className="text-lg text-background/80 leading-relaxed mb-8">
+            I work differently. My job isn't to keep you on the hook; it's to build your 
+            internal marketing capabilities so you can own your growth strategy completely.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-background/60 text-background hover:bg-background hover:text-foreground"
+            >
+              Compare Me
             </Button>
-          </motion.div>
-        </div>
+            <Button variant="accent" size="lg">
+              Let's Work Together
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
