@@ -121,6 +121,7 @@ export default {
         "scale-in": "scale-in 0.5s ease-out forwards",
         "slide-in-left": "slide-in-left 0.6s ease-out forwards",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "spotlight": "spotlight 2s ease 0.75s 1 forwards",
       },
     },
   },
