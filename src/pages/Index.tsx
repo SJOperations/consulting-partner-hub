@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import TrustSection from '@/components/TrustSection';
 import MethodologySection from '@/components/MethodologySection';
-import SplineRobot from '@/components/SplineRobot';
 import ProcessSection from '@/components/ProcessSection';
 import CalloutsSection from '@/components/CalloutsSection';
 import CTASection from '@/components/CTASection';
@@ -15,7 +14,6 @@ const Index = () => {
       <Hero />
       <TrustSection />
       <MethodologySection />
-      <SplineRobot />
       <ProcessSection />
       <CalloutsSection />
       <CTASection />
