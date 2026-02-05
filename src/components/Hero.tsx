@@ -7,7 +7,7 @@ import { Spotlight } from '@/components/ui/spotlight';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 pb-24">
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
       
@@ -98,7 +98,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative h-[400px] md:h-[500px] lg:h-[600px] hidden md:block"
+            className="relative h-[450px] md:h-[550px] lg:h-[650px] hidden md:block"
           >
             <SplineScene 
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
