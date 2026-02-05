@@ -101,11 +101,11 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="relative h-[450px] md:h-[550px] lg:h-[650px] hidden md:block"
+            className="relative h-[500px] md:h-[600px] lg:h-[700px] hidden md:block -mb-20"
           >
             <SplineScene 
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
-              className="w-full h-full"
+              className="w-full h-full scale-110 origin-top"
             />
           </motion.div>
         </div>
