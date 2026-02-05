@@ -7,15 +7,18 @@ import { Spotlight } from '@/components/ui/spotlight';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 pb-24">
+    <section className="relative min-h-screen flex items-center overflow-visible pt-16 pb-32">
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
       
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+      {/* Gradient overlay - fades into card color at bottom */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-card" />
 
       {/* Accent glow */}
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      
+      {/* Bottom gradient transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-card to-transparent pointer-events-none" />
 
       {/* Spotlight effect */}
       <Spotlight
