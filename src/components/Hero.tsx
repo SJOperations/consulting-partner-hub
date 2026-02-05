@@ -7,7 +7,7 @@ import { Spotlight } from '@/components/ui/spotlight';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-16">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 pb-24">
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-50" />
       
