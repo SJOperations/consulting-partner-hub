@@ -108,6 +108,10 @@ export default {
           "0%, 100%": { boxShadow: "0 0 20px hsl(175 60% 45% / 0.2)" },
           "50%": { boxShadow: "0 0 40px hsl(175 60% 45% / 0.4)" },
         },
+        "spotlight": {
+          "0%": { opacity: "0", transform: "translate(-72%, -62%) scale(0.5)" },
+          "100%": { opacity: "1", transform: "translate(-50%, -40%) scale(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
