@@ -26,7 +26,7 @@ const values = [
 
 const TrustSection = () => {
   return (
-    <section className="py-20 bg-card border-y border-border">
+    <section className="py-20 mt-8 bg-card border-y border-border">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
