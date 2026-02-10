@@ -77,6 +77,7 @@ const tools = [
 const Services = () => {
   return (
     <div className="min-h-screen bg-background noise-overlay">
+      <SEO title="Services | SJOps" description="From offer design to revenue analytics—everything a personal brand needs to scale. Funnels, CRM, automations, and growth operations." path="/services" />
       <Navbar />
       
       {/* Hero */}
