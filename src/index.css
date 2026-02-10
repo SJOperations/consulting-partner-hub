@@ -152,6 +152,19 @@
     @apply text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl;
   }
 
+  .card-glass {
+    @apply relative rounded-xl border border-white/[0.06] transition-all duration-500;
+    background: linear-gradient(135deg, hsl(220 20% 12% / 0.8), hsl(220 20% 10% / 0.6));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .card-glass:hover {
+    border-color: hsl(175 60% 45% / 0.25);
+    box-shadow: 0 0 40px hsl(175 60% 45% / 0.08), inset 0 1px 0 hsl(220 10% 95% / 0.05);
+    transform: translateY(-2px);
+  }
+
   .card-service {
     @apply bg-card p-8 rounded-lg border border-border transition-all duration-300;
   }
@@ -163,7 +176,7 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(175 60% 45%), hsl(175 55% 55%));
+    background-image: linear-gradient(135deg, hsl(175 60% 45%), hsl(175 55% 65%));
   }
 
   /* Stats/metrics styling */
