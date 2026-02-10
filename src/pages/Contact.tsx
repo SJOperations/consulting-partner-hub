@@ -61,6 +61,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background noise-overlay">
+      <SEO title="Contact | SJOps" description="Book a 15-minute fit call with SJOperations. Tell us about your business and we'll identify how to help you scale." path="/contact" />
       <Navbar />
       
       {/* Hero */}

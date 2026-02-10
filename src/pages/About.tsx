@@ -16,6 +16,7 @@ const operatorCode = [
 const About = () => {
   return (
     <div className="min-h-screen bg-background noise-overlay">
+      <SEO title="About | SJOps" description="We turn creators into resilient businesses. Learn about our mission, our operator's code, and why we stay small intentionally." path="/about" />
       <Navbar />
       
       {/* Hero */}

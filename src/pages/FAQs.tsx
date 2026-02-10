@@ -52,6 +52,7 @@ const faqs = [
 const FAQs = () => {
   return (
     <div className="min-h-screen bg-background noise-overlay">
+      <SEO title="FAQs | SJOps" description="Everything you need to know about working with SJOperations—pricing, onboarding, tools, security, and contract terms." path="/faqs" />
       <Navbar />
       
       {/* Hero */}

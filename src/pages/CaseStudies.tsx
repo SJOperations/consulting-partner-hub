@@ -10,6 +10,7 @@ import { ArrowRight, FileText, Users, TrendingUp } from 'lucide-react';
 const CaseStudies = () => {
   return (
     <div className="min-h-screen bg-background noise-overlay">
+      <SEO title="Case Studies | SJOps" description="Real results from real engagements. Anonymised case studies showing how we've helped creators and founders scale their operations." path="/case-studies" />
       <Navbar />
       
       {/* Hero */}
