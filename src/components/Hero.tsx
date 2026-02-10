@@ -102,6 +102,25 @@ const Hero = () => {
             transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[650px] -mb-10 md:-mb-20"
           >
+            {/* Speech bubble */}
+            <motion.div
+              initial={{ opacity: 0, y: 10, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.6, delay: 1.8, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute top-4 sm:top-6 md:top-10 left-2 sm:left-4 md:left-6 z-20"
+            >
+              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 sm:px-5 sm:py-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.15)] max-w-[180px] sm:max-w-[200px]">
+                <p className="text-[11px] sm:text-xs font-semibold text-[hsl(220,20%,15%)] leading-snug">
+                  Hello, my name is SJ!
+                </p>
+                <p className="text-[10px] sm:text-[11px] text-[hsl(220,15%,40%)] leading-snug mt-0.5">
+                  Interact with me! 👋
+                </p>
+                {/* Tail */}
+                <div className="absolute -bottom-2 left-6 sm:left-8 w-4 h-4 bg-white/95 rotate-45 rounded-sm" />
+              </div>
+            </motion.div>
+
             <SplineScene 
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full scale-110 origin-top"
