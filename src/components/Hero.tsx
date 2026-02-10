@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Bot } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { SplineScene } from '@/components/ui/spline';
 import { Spotlight } from '@/components/ui/spotlight';
 
@@ -95,38 +95,17 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right side - 3D Robot (desktop) */}
+          {/* Right side - 3D Robot */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[450px] md:h-[550px] lg:h-[650px] hidden md:block -mb-20"
+            className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[650px] -mb-10 md:-mb-20"
           >
             <SplineScene 
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
               className="w-full h-full scale-110 origin-top"
             />
-          </motion.div>
-
-          {/* Mobile fallback visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="relative md:hidden flex items-center justify-center py-8"
-          >
-            <div className="relative w-40 h-40">
-              {/* Glow rings */}
-              <div className="absolute inset-0 rounded-full bg-accent/10 animate-[pulse-glow_4s_ease-in-out_infinite]" />
-              <div className="absolute -inset-4 rounded-full bg-accent/5 animate-[pulse-glow_4s_ease-in-out_infinite_1s]" />
-              <div className="absolute -inset-8 rounded-full bg-accent/[0.03] animate-[pulse-glow_4s_ease-in-out_infinite_2s]" />
-              {/* Icon */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-2xl bg-accent/15 border border-accent/20 flex items-center justify-center shadow-[0_0_40px_hsl(175_60%_45%_/_0.2)]">
-                  <Bot className="w-10 h-10 text-accent" />
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
