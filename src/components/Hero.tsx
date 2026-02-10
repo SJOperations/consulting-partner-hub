@@ -7,15 +7,16 @@ import { Spotlight } from '@/components/ui/spotlight';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-visible pt-16 pb-32">
+    <section className="relative min-h-screen flex items-center overflow-visible pt-16 pb-24">
       {/* Grid pattern background */}
-      <div className="absolute inset-0 grid-pattern opacity-50" />
+      <div className="absolute inset-0 grid-pattern opacity-30" />
       
-      {/* Gradient overlay - fades into card color at bottom */}
+      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-card" />
 
-      {/* Accent glow */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      {/* Floating orbs */}
+      <div className="floating-orb w-[500px] h-[500px] bg-accent/[0.07] top-[10%] right-[10%]" />
+      <div className="floating-orb w-[300px] h-[300px] bg-teal-light/[0.05] bottom-[20%] left-[5%]" style={{ animationDelay: '10s' }} />
       
       {/* Bottom gradient transition */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-card to-transparent pointer-events-none" />
@@ -23,7 +24,7 @@ const Hero = () => {
       {/* Spotlight effect */}
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="hsl(175 60% 45% / 0.15)"
+        fill="hsl(175 60% 45% / 0.12)"
       />
 
       {/* Content */}
@@ -41,10 +42,10 @@ const Hero = () => {
             </motion.p>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.1] mb-6"
+              initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-foreground leading-[1.05] mb-6"
             >
               You create.
               <br />
@@ -55,7 +56,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 leading-relaxed"
+              className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed"
             >
               SJOperations installs and runs your offer, funnel, CRM, and growth engine 
               behind the scenes so you can focus on content and clients.
@@ -78,30 +79,30 @@ const Hero = () => {
               </Button>
             </motion.div>
 
-            {/* Industries we serve */}
+            {/* Industries */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.9 }}
-              className="mt-12 pt-8 border-t border-border"
+              className="mt-14 pt-8 border-t border-white/[0.06]"
             >
               <p className="text-sm text-muted-foreground mb-4">We work with creators and founders in</p>
-              <div className="flex flex-wrap gap-6 text-muted-foreground/60">
-                <span className="text-sm font-medium">Coaching</span>
-                <span className="text-sm font-medium">Consulting</span>
-                <span className="text-sm font-medium">SaaS</span>
-                <span className="text-sm font-medium">E-commerce</span>
-                <span className="text-sm font-medium">Personal Brands</span>
+              <div className="flex flex-wrap gap-3">
+                {['Coaching', 'Consulting', 'SaaS', 'E-commerce', 'Personal Brands'].map((tag) => (
+                  <span key={tag} className="text-xs font-medium text-muted-foreground/70 px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02]">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </motion.div>
           </div>
 
           {/* Right side - 3D Robot */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="relative h-[500px] md:h-[600px] lg:h-[700px] hidden md:block -mb-20"
+            transition={{ duration: 1.2, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="relative h-[450px] md:h-[550px] lg:h-[650px] hidden md:block -mb-20"
           >
             <SplineScene 
               scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"

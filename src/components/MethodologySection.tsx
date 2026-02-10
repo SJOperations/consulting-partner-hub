@@ -26,14 +26,18 @@ const steps = [
 
 const MethodologySection = () => {
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
+    <section className="relative py-28 bg-background overflow-hidden">
+      {/* Floating orbs */}
+      <div className="floating-orb w-[300px] h-[300px] bg-accent/[0.05] top-20 -left-20" style={{ animationDelay: '5s' }} />
+      <div className="floating-orb w-[200px] h-[200px] bg-teal-light/[0.04] bottom-10 right-10" style={{ animationDelay: '12s' }} />
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center max-w-3xl mx-auto mb-20"
         >
           <p className="section-label">Our Methodology</p>
           <h2 className="section-title mb-6">
@@ -44,23 +48,31 @@ const MethodologySection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-4 gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative"
+              initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.8, 
+                delay: index * 0.15,
+                ease: [0.22, 1, 0.36, 1]
+              }}
+              className="relative group"
             >
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-1/2 w-full h-px bg-border" />
+                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-px bg-gradient-to-r from-border to-transparent" />
               )}
               
-              <div className="relative bg-card p-6 rounded-lg border border-border text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-4">
+              <div className="card-glass p-8 text-center h-full">
+                {/* Step number */}
+                <div className="absolute top-4 right-4 text-xs font-display font-bold text-accent/30">
+                  0{index + 1}
+                </div>
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/10 text-accent mb-5 group-hover:bg-accent/20 group-hover:shadow-[0_0_30px_hsl(175_60%_45%_/_0.15)] transition-all duration-500">
                   <step.icon className="w-7 h-7" />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">
