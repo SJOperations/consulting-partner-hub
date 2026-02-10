@@ -299,3 +299,16 @@ html {
   background: hsl(175 60% 45% / 0.3);
   color: hsl(220 10% 95%);
 }
+
+/* Floating drift keyframes */
+@keyframes float-drift {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+  100% { transform: translate(10px, -10px) scale(1.02); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
