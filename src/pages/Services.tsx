@@ -3,7 +3,6 @@ import Footer from '@/components/Footer';
 import CTASection from '@/components/CTASection';
 import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import { 
   Package, 
   Layout, 
@@ -13,7 +12,6 @@ import {
   Mail, 
   BarChart3, 
   TrendingUp,
-  ArrowRight,
   CheckCircle2
 } from 'lucide-react';
 
