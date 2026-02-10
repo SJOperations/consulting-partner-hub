@@ -1,9 +1,9 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CTASection from '@/components/CTASection';
+import SEO from '@/components/SEO';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, Shield, Zap, Target, BarChart3, Eye } from 'lucide-react';
+import { Shield, Zap, Target, BarChart3, Eye } from 'lucide-react';
 
 const operatorCode = [
   { icon: Shield, title: 'Confidentiality', description: 'Your business stays your business. NDA on request.' },
@@ -15,21 +15,28 @@ const operatorCode = [
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background noise-overlay">
+      <SEO title="About | SJOps" description="We turn creators into resilient businesses. Learn about our mission, our operator's code, and why we stay small intentionally." path="/about" />
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-20">
-        <div className="container mx-auto px-6">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-card" />
+        <div className="floating-orb w-[400px] h-[400px] bg-accent/[0.06] top-[15%] right-[5%]" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
             <p className="section-label">About SJOperations</p>
-            <h1 className="section-title mb-6">
-              Turn creators into resilient businesses—without turning them into operators
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.05] mb-6">
+              Turn creators into resilient businesses—without turning them into{' '}
+              <span className="text-gradient">operators</span>
             </h1>
             <p className="section-subtitle">
               We exist to give creators and founders the back-end infrastructure 
@@ -40,14 +47,17 @@ const About = () => {
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 bg-card overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background" />
+        <div className="floating-orb w-[300px] h-[300px] bg-teal-light/[0.04] bottom-10 left-[10%]" style={{ animationDelay: '6s' }} />
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -30, filter: 'blur(8px)' }}
+              whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             >
               <p className="section-label">Our Mission</p>
               <h2 className="font-display text-3xl font-semibold text-foreground mb-6">
@@ -68,13 +78,13 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 30, filter: 'blur(8px)' }}
+              whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              <div className="bg-secondary p-8 rounded-lg border border-border">
+              <div className="card-glass p-8">
                 <blockquote className="text-xl font-display text-foreground italic mb-4">
                   "You create. We compound."
                 </blockquote>
@@ -82,21 +92,24 @@ const About = () => {
                   — The SJOperations philosophy
                 </p>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-accent/10 rounded-lg -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-accent/10 rounded-xl -z-10 blur-sm" />
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* Operator's Code */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 bg-background overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-secondary" />
+        <div className="floating-orb w-[350px] h-[350px] bg-accent/[0.05] top-20 -right-20" style={{ animationDelay: '10s' }} />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-center mb-16"
           >
             <p className="section-label">The Operator's Code</p>
             <h2 className="font-display text-3xl font-semibold text-foreground">
@@ -108,13 +121,13 @@ const About = () => {
             {operatorCode.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                transition={{ duration: 0.7, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="card-glass p-6 text-center group"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent/10 text-accent mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent mb-4 group-hover:bg-accent/20 group-hover:shadow-[0_0_20px_hsl(175_60%_45%_/_0.15)] transition-all duration-500">
                   <item.icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-foreground mb-2">
@@ -130,13 +143,15 @@ const About = () => {
       </section>
 
       {/* What We Build */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 bg-secondary overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="text-center mb-12"
           >
             <p className="section-label">What We Build</p>
@@ -157,11 +172,11 @@ const About = () => {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card p-6 rounded-lg border border-border"
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="card-glass p-6"
               >
                 <h3 className="font-display text-lg font-semibold text-foreground mb-2">
                   {item.title}
@@ -174,13 +189,15 @@ const About = () => {
       </section>
 
       {/* Team */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
+      <section className="relative py-24 bg-background overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-card" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl mx-auto text-center"
           >
             <p className="section-label">The Team</p>
@@ -200,31 +217,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-display text-3xl font-semibold text-foreground mb-4">
-              Ready to meet the operators?
-            </h2>
-            <p className="text-muted-foreground mb-8">
-              Let's see if we're the right fit for your growth.
-            </p>
-            <Button asChild size="lg" className="group">
-              <Link to="/contact">
-                Book a 15-Minute Fit Call
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
+      <CTASection />
       <Footer />
     </div>
   );
