@@ -19,8 +19,7 @@ const Hero = () => {
       <div className="floating-orb w-[500px] h-[500px] bg-accent/[0.07] top-[10%] right-[10%]" />
       <div className="floating-orb w-[300px] h-[300px] bg-teal-light/[0.05] bottom-[20%] left-[5%]" style={{ animationDelay: '10s' }} />
       
-      {/* Bottom gradient transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-card to-transparent pointer-events-none" />
+      {/* Bottom handled by the gradient overlay above */}
 
       {/* Spotlight effect */}
       <Spotlight
