@@ -1,8 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import TrustSection from '@/components/TrustSection';
-import MethodologySection from '@/components/MethodologySection';
-import ProcessSection from '@/components/ProcessSection';
+import MethodologyProcessSection from '@/components/MethodologyProcessSection';
 import CalloutsSection from '@/components/CalloutsSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
@@ -13,8 +12,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <TrustSection />
-      <MethodologySection />
-      <ProcessSection />
+      <MethodologyProcessSection />
       <CalloutsSection />
       <CTASection />
       <Footer />
