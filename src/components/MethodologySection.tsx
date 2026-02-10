@@ -27,6 +27,9 @@ const steps = [
 const MethodologySection = () => {
   return (
     <section className="relative py-28 bg-background overflow-hidden">
+      {/* Smooth gradient transitions */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-card" />
+      
       {/* Floating orbs */}
       <div className="floating-orb w-[300px] h-[300px] bg-accent/[0.05] top-20 -left-20" style={{ animationDelay: '5s' }} />
       <div className="floating-orb w-[200px] h-[200px] bg-teal-light/[0.04] bottom-10 right-10" style={{ animationDelay: '12s' }} />

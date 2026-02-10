@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="relative py-16 bg-primary border-t border-white/[0.06] overflow-hidden">
+    <footer className="relative py-16 bg-gradient-to-b from-primary to-primary/80 border-t border-white/[0.03] overflow-hidden">
       {/* Subtle top glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-accent/20 to-transparent" />
 

@@ -27,6 +27,9 @@ const values = [
 const TrustSection = () => {
   return (
     <section className="relative py-24 bg-card overflow-hidden">
+      {/* Smooth gradient transitions */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background" />
+      
       {/* Floating orb */}
       <div className="floating-orb w-[400px] h-[400px] bg-accent/[0.06] -top-20 -right-20" />
 

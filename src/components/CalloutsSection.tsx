@@ -27,6 +27,8 @@ const callouts = [
 const CalloutsSection = () => {
   return (
     <section className="relative py-24 bg-background overflow-hidden">
+      {/* Smooth gradient transition to CTA */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-card" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {callouts.map((callout, index) => (

@@ -6,6 +6,9 @@ import { ArrowRight } from 'lucide-react';
 const CTASection = () => {
   return (
     <section className="relative py-32 bg-card overflow-hidden">
+      {/* Smooth gradient transition to footer */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-primary" />
+      
       {/* Dramatic glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/[0.06] rounded-full blur-[120px]" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-accent/[0.1] rounded-full blur-[80px]" style={{ animation: 'pulse-glow 4s ease-in-out infinite' }} />
