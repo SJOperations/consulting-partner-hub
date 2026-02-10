@@ -11,8 +11,9 @@ const Hero = () => {
       {/* Grid pattern background */}
       <div className="absolute inset-0 grid-pattern opacity-30" />
       
-      {/* Gradient overlay */}
+      {/* Gradient overlay - smooth transition to next section */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-card" />
+      <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-b from-transparent to-card" />
 
       {/* Floating orbs */}
       <div className="floating-orb w-[500px] h-[500px] bg-accent/[0.07] top-[10%] right-[10%]" />

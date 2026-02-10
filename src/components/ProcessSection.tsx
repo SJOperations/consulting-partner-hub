@@ -34,6 +34,9 @@ const ProcessSection = () => {
 
   return (
     <section className="relative py-28 bg-card overflow-hidden">
+      {/* Smooth gradient transitions */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background" />
+      
       {/* Accent line */}
       <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-accent/20 to-transparent" />
       
