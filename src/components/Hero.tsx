@@ -107,17 +107,17 @@ const Hero = () => {
               initial={{ opacity: 0, y: 10, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.6, delay: 1.8, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute top-4 sm:top-6 md:top-10 left-2 sm:left-4 md:left-6 z-20"
+              className="absolute top-4 sm:top-6 md:top-10 right-2 sm:right-4 md:right-6 z-20"
             >
-              <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 sm:px-5 sm:py-3.5 shadow-[0_4px_20px_rgba(0,0,0,0.15)] max-w-[180px] sm:max-w-[200px]">
-                <p className="text-[11px] sm:text-xs font-semibold text-[hsl(220,20%,15%)] leading-snug">
+              <div className="relative border border-accent/25 rounded-2xl px-4 py-3 sm:px-5 sm:py-3.5 shadow-[0_0_25px_hsl(175_60%_45%_/_0.12)] max-w-[180px] sm:max-w-[200px]" style={{ background: 'linear-gradient(135deg, hsl(220 20% 14% / 0.9), hsl(220 20% 10% / 0.85))', backdropFilter: 'blur(16px)' }}>
+                <p className="text-[11px] sm:text-xs font-semibold text-foreground leading-snug">
                   Hello, my name is SJ!
                 </p>
-                <p className="text-[10px] sm:text-[11px] text-[hsl(220,15%,40%)] leading-snug mt-0.5">
-                  Interact with me! 👋
+                <p className="text-[10px] sm:text-[11px] text-muted-foreground leading-snug mt-0.5">
+                  Interact with me! <span className="text-accent">👋</span>
                 </p>
                 {/* Tail */}
-                <div className="absolute -bottom-2 left-6 sm:left-8 w-4 h-4 bg-white/95 rotate-45 rounded-sm" />
+                <div className="absolute -bottom-2 right-6 sm:right-8 w-4 h-4 rotate-45 rounded-sm border-r border-b border-accent/25" style={{ background: 'hsl(220 20% 11% / 0.9)' }} />
               </div>
             </motion.div>
 
