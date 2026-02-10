@@ -59,21 +59,25 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background noise-overlay">
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-12">
-        <div className="container mx-auto px-6">
+      <section className="relative pt-32 pb-12 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+        <div className="floating-orb w-[400px] h-[400px] bg-accent/[0.06] top-[10%] left-[60%]" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl mx-auto text-center"
           >
             <p className="section-label">Get Started</p>
-            <h1 className="section-title mb-6">
-              Book your 15-minute fit call
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.05] mb-6">
+              Book your <span className="text-gradient">fit call</span>
             </h1>
             <p className="section-subtitle mx-auto">
               Tell us about your business and we'll get back to you within 24 hours 
@@ -84,14 +88,16 @@ const Contact = () => {
       </section>
 
       {/* Form Section */}
-      <section className="pb-20">
-        <div className="container mx-auto px-6">
+      <section className="relative pb-20 overflow-hidden">
+        <div className="floating-orb w-[300px] h-[300px] bg-teal-light/[0.03] bottom-[10%] left-[5%]" style={{ animationDelay: '8s' }} />
+
+        <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
             {/* Form */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, x: -30, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-3"
             >
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -229,55 +235,35 @@ const Contact = () => {
 
             {/* Sidebar */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              initial={{ opacity: 0, x: 30, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
+              transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
               className="lg:col-span-2"
             >
-              <div className="bg-card border border-border rounded-lg p-8 sticky top-24">
+              <div className="card-glass p-8 sticky top-24">
                 <h3 className="font-display text-xl font-semibold text-foreground mb-6">
                   What to expect
                 </h3>
                 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
-                      <Clock className="w-5 h-5" />
+                  {[
+                    { icon: Clock, title: '15-minute call', desc: 'Quick, focused conversation about your challenges and goals.' },
+                    { icon: Calendar, title: 'Response within 24h', desc: 'We\'ll reply with available times within one business day.' },
+                    { icon: CheckCircle2, title: 'No obligation', desc: 'We\'ll give you honest advice even if we\'re not the right fit.' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+                        <item.icon className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-1">{item.title}</h4>
+                        <p className="text-muted-foreground text-sm">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">15-minute call</h4>
-                      <p className="text-muted-foreground text-sm">
-                        Quick, focused conversation about your challenges and goals.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
-                      <Calendar className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">Response within 24h</h4>
-                      <p className="text-muted-foreground text-sm">
-                        We'll reply with available times within one business day.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
-                      <CheckCircle2 className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">No obligation</h4>
-                      <p className="text-muted-foreground text-sm">
-                        We'll give you honest advice even if we're not the right fit.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-border">
+                <div className="mt-8 pt-6 border-t border-white/[0.06]">
                   <h4 className="font-semibold text-foreground mb-3">Prep checklist</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li className="flex items-center gap-2">
@@ -295,7 +281,7 @@ const Contact = () => {
                   </ul>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-border">
+                <div className="mt-6 pt-6 border-t border-white/[0.06]">
                   <h4 className="font-semibold text-foreground mb-2">Prefer email?</h4>
                   <a 
                     href="mailto:contact@sjoperations.com" 

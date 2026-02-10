@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CTASection from '@/components/CTASection';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -7,21 +8,26 @@ import { ArrowRight, FileText, Users, TrendingUp } from 'lucide-react';
 
 const CaseStudies = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background noise-overlay">
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-20">
-        <div className="container mx-auto px-6">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background" />
+        <div className="floating-orb w-[400px] h-[400px] bg-accent/[0.06] top-[10%] right-[10%]" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-4xl"
           >
             <p className="section-label">Case Studies</p>
-            <h1 className="section-title mb-6">
-              Results in progress
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.05] mb-6">
+              Results in <span className="text-gradient">progress</span>
             </h1>
             <p className="section-subtitle">
               We are currently building out our first client engagements. 
@@ -32,59 +38,41 @@ const CaseStudies = () => {
       </section>
 
       {/* What to Expect */}
-      <section className="pb-20">
-        <div className="container mx-auto px-6">
+      <section className="relative pb-20 overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-card" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl mx-auto"
           >
-            <div className="bg-card border border-border rounded-lg p-8 md:p-12">
+            <div className="card-glass p-8 md:p-12">
               <h2 className="font-display text-2xl font-semibold text-foreground mb-6">
                 What our case studies will include
               </h2>
               
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
-                    <Users className="w-5 h-5" />
+                {[
+                  { icon: Users, title: 'Client Profile', desc: 'Creator type, niche, audience size, and starting point—anonymised to protect privacy.' },
+                  { icon: FileText, title: 'The Constraint', desc: 'What was broken or missing—where revenue leaked or operations stalled.' },
+                  { icon: TrendingUp, title: 'Results as Ranges', desc: 'Honest outcomes framed as ranges with context—no absolute guarantees, just benchmarks.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center text-accent">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
+                      <p className="text-muted-foreground text-sm">{item.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Client Profile</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Creator type, niche, audience size, and starting point—anonymised to protect privacy.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
-                    <FileText className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">The Constraint</h3>
-                    <p className="text-muted-foreground text-sm">
-                      What was broken or missing—where revenue leaked or operations stalled.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
-                    <TrendingUp className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Results as Ranges</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Honest outcomes framed as ranges with context—no absolute guarantees, just benchmarks.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
 
-              <div className="mt-8 pt-6 border-t border-border">
+              <div className="mt-8 pt-6 border-t border-white/[0.06]">
                 <p className="text-muted-foreground text-sm mb-4">
                   In the meantime, the best way to understand how we work is to have a conversation.
                 </p>
@@ -100,31 +88,7 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-display text-3xl font-semibold text-foreground mb-4">
-              Be one of our first case studies
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Early clients get our full attention. Book a call and let us show you what we can build together.
-            </p>
-            <Button asChild size="lg" className="group">
-              <Link to="/contact">
-                Book a 15-Minute Fit Call
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
+      <CTASection />
       <Footer />
     </div>
   );

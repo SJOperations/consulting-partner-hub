@@ -1,9 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CTASection from '@/components/CTASection';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -52,21 +50,25 @@ const faqs = [
 
 const FAQs = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background noise-overlay">
       <Navbar />
       
       {/* Hero */}
-      <section className="pt-32 pb-12">
-        <div className="container mx-auto px-6">
+      <section className="relative pt-32 pb-12 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
+        <div className="floating-orb w-[350px] h-[350px] bg-accent/[0.06] top-[15%] right-[15%]" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 30, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl mx-auto text-center"
           >
             <p className="section-label">FAQs</p>
-            <h1 className="section-title mb-6">
-              Questions answered
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-[1.05] mb-6">
+              Questions <span className="text-gradient">answered</span>
             </h1>
             <p className="section-subtitle mx-auto">
               Everything you need to know about working with SJOperations.
@@ -76,12 +78,14 @@ const FAQs = () => {
       </section>
 
       {/* FAQs */}
-      <section className="pb-20">
-        <div className="container mx-auto px-6">
+      <section className="relative pb-20 overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-card" />
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl mx-auto"
           >
             <Accordion type="single" collapsible className="space-y-4">
@@ -89,7 +93,7 @@ const FAQs = () => {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="bg-card border border-border rounded-lg px-6 data-[state=open]:border-accent/30"
+                  className="card-glass px-6 data-[state=open]:border-accent/30"
                 >
                   <AccordionTrigger className="text-left font-display text-lg font-semibold text-foreground hover:text-accent hover:no-underline py-6">
                     {faq.question}
@@ -104,31 +108,7 @@ const FAQs = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-display text-3xl font-semibold text-foreground mb-4">
-              Still have questions?
-            </h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Book a fit call and we'll answer everything—no obligation.
-            </p>
-            <Button asChild size="lg" className="group">
-              <Link to="/contact">
-                Book a 15-Minute Fit Call
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
+      <CTASection />
       <Footer />
     </div>
   );
