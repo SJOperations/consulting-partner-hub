@@ -219,6 +219,42 @@
   .glow-accent-strong {
     box-shadow: 0 0 60px hsl(175 60% 45% / 0.3);
   }
+
+  /* Floating orb */
+  .floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: float-drift 20s ease-in-out infinite alternate;
+  }
+
+  /* Section divider gradient */
+  .section-fade-top {
+    position: relative;
+  }
+  .section-fade-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, hsl(var(--background)), transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .section-fade-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, hsl(var(--background)), transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
 }
 
 @layer utilities {
