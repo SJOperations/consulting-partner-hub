@@ -3,23 +3,23 @@ import { Settings, Workflow, BarChart3, Clock } from 'lucide-react';
 
 const values = [
   { 
-    title: 'Full-Stack Operations', 
-    description: 'From offer design to analytics—everything your back end needs',
+    title: 'We Run the Whole Machine', 
+    description: 'Offer, funnel, CRM, automations, analytics—we own the entire stack so you don\'t have to.',
     icon: Settings 
   },
   { 
-    title: 'Systems, Not Band-Aids', 
-    description: 'We build infrastructure that scales, not quick fixes that break',
+    title: 'Engineered to Scale', 
+    description: 'No duct tape. No band-aids. We build systems that compound—month after month.',
     icon: Workflow 
   },
   { 
-    title: 'Transparent Reporting', 
-    description: 'Weekly KPIs and dashboards—you always know what is working',
+    title: 'Receipts, Not Promises', 
+    description: 'Weekly KPIs, live dashboards, full visibility. We prove the ROI—every single week.',
     icon: BarChart3 
   },
   { 
-    title: 'Minimal Lift Required', 
-    description: 'We implement, you approve. No homework, no endless meetings',
+    title: 'Zero Homework for You', 
+    description: 'We implement everything. You just approve. No meetings, no busy work, no hand-holding.',
     icon: Clock 
   },
 ];
@@ -41,9 +41,9 @@ const TrustSection = () => {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-16"
         >
-          <p className="section-label">Why SJOperations</p>
-          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold text-foreground">
-            Operators, not consultants
+          <p className="section-label">Why We're Different</p>
+          <h2 className="section-title">
+            We don't advise. <span className="text-gradient">We execute.</span>
           </h2>
         </motion.div>
 

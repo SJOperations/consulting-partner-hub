@@ -20,7 +20,7 @@ const Footer = () => {
                 SJ<span className="text-accent">Ops</span>
               </span>
               <p className="text-muted-foreground mt-4 text-sm leading-relaxed">
-                Behind-the-scenes operators for creators and founders. We build the back end so you can focus on the front end.
+                The silent operators behind 7-figure creators. We engineer the back end that turns attention into revenue.
               </p>
               <a 
                 href="mailto:contact@sjoperations.com" 
@@ -65,7 +65,7 @@ const Footer = () => {
               © {new Date().getFullYear()} SJOperations. All rights reserved.
             </div>
             <div className="text-sm text-muted-foreground">
-              Confidentiality-first. GDPR compliant.
+              NDA-first. GDPR compliant. Quietly dominant.
             </div>
           </div>
         </motion.div>
