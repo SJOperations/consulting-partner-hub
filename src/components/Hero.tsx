@@ -36,7 +36,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="section-label"
             >
-              Your Silent Growth Team
+              The Operators Behind the Curtain
             </motion.p>
 
             <motion.h1
@@ -45,9 +45,9 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-foreground leading-[1.05] mb-6"
             >
-              You create.
+              You show up.
               <br />
-              <span className="text-gradient">We compound.</span>
+              <span className="text-gradient">We make it print.</span>
             </motion.h1>
 
             <motion.p
@@ -56,8 +56,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed"
             >
-              SJOperations installs and runs your offer, funnel, CRM, and growth engine 
-              behind the scenes so you can focus on content and clients.
+              While you're closing deals and creating content, we're engineering the 
+              entire back end that turns attention into revenue—on autopilot.
             </motion.p>
 
             <motion.div
@@ -68,12 +68,12 @@ const Hero = () => {
             >
               <Button asChild size="lg" className="group">
                 <Link to="/contact">
-                  Book a 15-Minute Fit Call
+                  Make My Back End Bulletproof
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/services">See What We Build</Link>
+                <Link to="/services">See the Arsenal</Link>
               </Button>
             </motion.div>
 
@@ -84,7 +84,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.9 }}
               className="mt-14 pt-8 border-t border-white/[0.06]"
             >
-              <p className="text-sm text-muted-foreground mb-4">We work with creators and founders in</p>
+              <p className="text-sm text-muted-foreground mb-4">Built for industries that demand results</p>
               <div className="flex flex-wrap gap-3">
                 {['Coaching', 'Consulting', 'SaaS', 'E-commerce', 'Personal Brands'].map((tag) => (
                   <span key={tag} className="text-xs font-medium text-muted-foreground/70 px-3 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02]">

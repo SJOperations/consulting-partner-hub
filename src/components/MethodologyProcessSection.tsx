@@ -8,22 +8,22 @@ const phases = [
   {
     icon: Search,
     title: 'Diagnose',
-    description: 'We audit your current setup, identify revenue leaks, map growth constraints, and find quick wins.',
+    description: 'We tear apart your current setup, expose every revenue leak, and pinpoint exactly where money is being left on the table.',
   },
   {
     icon: PenTool,
     title: 'Design',
-    description: 'We architect your offer, funnel, CRM, and automation stack—tailored to your audience and goals.',
+    description: 'We architect a custom growth engine—offer, funnel, CRM, automations—precision-built to convert your specific audience.',
   },
   {
     icon: Rocket,
     title: 'Deploy',
-    description: 'We build and launch everything—pages, emails, CRM, appointment systems, and reporting dashboards.',
+    description: 'We build and ship everything—fast. Pages, emails, CRM, booking systems, dashboards. You wake up to a finished machine.',
   },
   {
     icon: RefreshCw,
     title: 'Optimise',
-    description: 'We monitor KPIs weekly, iterate on what works, and compound your results month over month.',
+    description: 'We obsess over the numbers. Weekly iterations, relentless testing, compounding gains. Your growth never plateaus.',
   },
 ];
 
@@ -48,12 +48,12 @@ const MethodologyProcessSection = () => {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <p className="section-label">How We Work</p>
+          <p className="section-label">Our Playbook</p>
           <h2 className="section-title mb-6">
-            Diagnose. Design. Deploy. Optimise.
+            Four phases. <span className="text-gradient">Zero guesswork.</span>
           </h2>
           <p className="section-subtitle mx-auto">
-            A systematic four-phase approach to building your growth engine—no guesswork, no fluff.
+            Every engagement follows a battle-tested framework that turns chaos into a machine. We've done this hundreds of times.
           </p>
         </motion.div>
 
@@ -105,7 +105,7 @@ const MethodologyProcessSection = () => {
         >
           <Button asChild size="lg" className="group">
             <Link to="/contact">
-              Start Your Build
+              I'm Ready for Quiet Growth
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>

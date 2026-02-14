@@ -24,24 +24,24 @@ const CTASection = () => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-3xl mx-auto text-center"
         >
-          <p className="section-label">Ready to scale?</p>
+          <p className="section-label">Your move</p>
           <h2 className="section-title mb-6">
-            Let's build your back end
+            Stop duct-taping. <span className="text-gradient">Start compounding.</span>
           </h2>
           <p className="section-subtitle mx-auto mb-12">
-            Book a 15-minute fit call. We'll dig into your most pressing marketing 
-            challenges and identify the right course of action—whether or not it's working with us.
+            15 minutes. One call. We'll dissect your biggest bottleneck and hand you 
+            a roadmap—whether you hire us or not. That's how confident we are.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="group w-full sm:w-auto">
               <Link to="/contact">
-                Book a 15-Minute Fit Call
+                Show Me How You Operate
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="w-full sm:w-auto">
-              <Link to="/services">Explore Services</Link>
+              <Link to="/services">See the Full Arsenal</Link>
             </Button>
           </div>
 
@@ -52,7 +52,7 @@ const CTASection = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-sm text-muted-foreground mt-10"
           >
-            No commitment. No pressure. Just clarity.
+            No commitment. No fluff. Just a free blueprint from operators who've done this hundreds of times.
           </motion.p>
         </motion.div>
       </div>

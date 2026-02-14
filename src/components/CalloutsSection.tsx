@@ -4,23 +4,23 @@ import { Shield, Zap, Lock, Eye } from 'lucide-react';
 const callouts = [
   {
     icon: Lock,
-    title: 'Confidentiality-first',
-    description: 'NDA available. Your data, your business—never shared.',
+    title: 'Vault-level confidentiality',
+    description: 'NDA on day one. Your strategy, your data, your IP—locked down and never shared. Period.',
   },
   {
     icon: Zap,
-    title: 'Minimal lift required',
-    description: 'We implement. You approve. No homework.',
+    title: 'You do nothing',
+    description: 'We handle every detail. You just say yes or no. That\'s the entire job description for you.',
   },
   {
     icon: Shield,
-    title: 'You own everything',
-    description: 'All accounts, assets, and systems belong to you.',
+    title: 'You own every asset',
+    description: 'Every account, every funnel, every automation—it\'s all yours. We never hold your business hostage.',
   },
   {
     icon: Eye,
-    title: 'Full transparency',
-    description: 'Weekly reports, dashboard access, no black boxes.',
+    title: 'Radical transparency',
+    description: 'Live dashboards, weekly reports, zero black boxes. You see exactly what we see—always.',
   },
 ];
 
