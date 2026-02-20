@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import StatsSection from '@/components/StatsSection';
 import TrustSection from '@/components/TrustSection';
 import MethodologyProcessSection from '@/components/MethodologyProcessSection';
 import CalloutsSection from '@/components/CalloutsSection';
@@ -13,6 +14,7 @@ const Index = () => {
       <SEO />
       <Navbar />
       <Hero />
+      <StatsSection />
       <TrustSection />
       <MethodologyProcessSection />
       <CalloutsSection />
