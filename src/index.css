@@ -153,16 +153,47 @@
   }
 
   .card-glass {
-    @apply relative rounded-xl border border-white/[0.06] transition-all duration-500;
-    background: linear-gradient(135deg, hsl(220 20% 12% / 0.8), hsl(220 20% 10% / 0.6));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    @apply relative rounded-2xl border border-white/[0.06] transition-all duration-500;
+    background: linear-gradient(145deg, hsl(220 20% 13% / 0.9), hsl(220 20% 9% / 0.7));
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 2px 20px hsl(0 0% 0% / 0.2), inset 0 1px 0 hsl(220 10% 95% / 0.03);
   }
 
   .card-glass:hover {
-    border-color: hsl(175 60% 45% / 0.25);
-    box-shadow: 0 0 40px hsl(175 60% 45% / 0.08), inset 0 1px 0 hsl(220 10% 95% / 0.05);
-    transform: translateY(-2px);
+    border-color: hsl(175 60% 45% / 0.3);
+    box-shadow: 0 8px 40px hsl(175 60% 45% / 0.1), 0 0 0 1px hsl(175 60% 45% / 0.1), inset 0 1px 0 hsl(220 10% 95% / 0.06);
+    transform: translateY(-4px);
+  }
+
+  /* Shimmer border card variant */
+  .card-shimmer {
+    @apply relative rounded-2xl overflow-hidden transition-all duration-500;
+    background: linear-gradient(145deg, hsl(220 20% 13% / 0.9), hsl(220 20% 9% / 0.7));
+  }
+
+  .card-shimmer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(175 60% 45% / 0.3), transparent 40%, transparent 60%, hsl(175 60% 45% / 0.15));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    opacity: 0.5;
+  }
+
+  .card-shimmer:hover::before {
+    opacity: 1;
+  }
+
+  .card-shimmer:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px hsl(175 60% 45% / 0.12);
   }
 
   .card-service {
@@ -176,7 +207,9 @@
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(175 60% 45%), hsl(175 55% 65%));
+    background-image: linear-gradient(135deg, hsl(175 60% 50%), hsl(175 50% 70%), hsl(175 60% 50%));
+    background-size: 200% auto;
+    animation: text-shimmer 3s ease-in-out infinite;
   }
 
   /* Stats/metrics styling */
@@ -311,4 +344,9 @@ html {
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.8; }
+}
+
+@keyframes text-shimmer {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
 }
