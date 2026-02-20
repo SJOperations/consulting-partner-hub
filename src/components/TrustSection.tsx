@@ -26,12 +26,12 @@ const values = [
 
 const TrustSection = () => {
   return (
-    <section className="relative py-24 bg-card overflow-hidden">
+    <section className="relative py-28 bg-card overflow-hidden">
       {/* Smooth gradient transitions */}
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background" />
       
       {/* Floating orb */}
-      <div className="floating-orb w-[400px] h-[400px] bg-accent/[0.06] -top-20 -right-20" />
+      <div className="floating-orb w-[500px] h-[500px] bg-accent/[0.05] -top-32 -right-20" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -39,7 +39,7 @@ const TrustSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <p className="section-label">Why We're Different</p>
           <h2 className="section-title">
@@ -51,17 +51,17 @@ const TrustSection = () => {
           {values.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ 
                 duration: 0.7, 
                 delay: index * 0.12,
                 ease: [0.22, 1, 0.36, 1]
               }}
-              className="card-glass p-6 text-center group"
+              className="card-shimmer p-6 text-center group"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-accent/10 text-accent mb-4 group-hover:bg-accent/20 transition-colors duration-500">
+              <div className="relative inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-accent/10 text-accent mb-5 group-hover:bg-accent/20 group-hover:shadow-[0_0_30px_hsl(175_60%_45%_/_0.15)] transition-all duration-500">
                 <item.icon className="w-6 h-6" />
               </div>
               <h3 className="font-display text-lg font-semibold text-foreground mb-2">
