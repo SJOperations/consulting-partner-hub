@@ -5,7 +5,7 @@ const stats = [
   { icon: Calendar, value: '5+', label: 'Years in Ops', sublabel: 'Marketing, systems & scale' },
   { icon: Clock, value: '24hr', label: 'Response SLA', sublabel: 'Every message. No exceptions.' },
   { icon: Shield, value: '100%', label: 'Asset Ownership', sublabel: 'Everything we build is yours' },
-  { icon: DollarSign, value: '$0', label: 'Upfront Cost', sublabel: 'You pay when you see results' },
+  { icon: DollarSign, value: '$0', label: 'Upfront Cost', sublabel: 'We earn when you earn' },
 ];
 
 const StatsSection = () => {
